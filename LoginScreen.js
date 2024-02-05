@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { loginUser } from './Database';
+import { View, TextInput, Button, StyleSheet, Alert, Text, TouchableOpacity } from 'react-native';
+import { loginUser } from './Database'; // './Database' yolu kendi dosya yapınıza göre ayarlayın
+
+
 
 const LoginScreen = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
@@ -22,6 +24,7 @@ const LoginScreen = ({ onLoginSuccess }) => {
     <View style={styles.container}>
       <TextInput
         placeholder="Email"
+        placeholderTextColor="#ccc" // Placeholder metni için daha açık bir renk
         value={email}
         onChangeText={setEmail}
         style={styles.input}
@@ -30,12 +33,16 @@ const LoginScreen = ({ onLoginSuccess }) => {
       />
       <TextInput
         placeholder="Password"
+        placeholderTextColor="#ccc" // Placeholder metni için daha açık bir renk
         value={password}
         onChangeText={setPassword}
         style={styles.input}
         secureTextEntry
       />
-      <Button title="Login" onPress={handleLogin} style={styles.button} />
+      {/* Button yerine TouchableOpacity kullanarak daha özelleştirilebilir bir buton oluşturabiliriz */}
+      <TouchableOpacity onPress={handleLogin} style={styles.button}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -46,6 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#333', // Arka planı dark mod için koyu renk yapabiliriz
   },
   input: {
     height: 40,
@@ -54,10 +62,19 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     paddingHorizontal: 10,
+    color: '#fff', // Input metni rengi
+    backgroundColor: '#555', // Input arka planı
   },
   button: {
-    marginTop: 10,
+    marginTop: 20,
     width: '80%',
+    backgroundColor: '#0066cc', // Buton arka planı
+    padding: 10,
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: '#fff', // Buton metni rengi
   },
 });
 
