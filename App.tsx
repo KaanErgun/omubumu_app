@@ -60,9 +60,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="ChoiceScreen">
-        <Drawer.Screen name="ChoiceScreen" component={ChoiceScreen} options={{ drawerLabel: 'Tercih Ekranı' }} />
+        <Drawer.Screen name="Choice Screen" component={ChoiceScreen} options={{ drawerLabel: 'Tercih Ekranı' }} />
         <Drawer.Screen name="Settings" component={SettingsScreen} options={{ drawerLabel: 'Ayarlar' }} />
-        <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerLabel: 'Profil' }} /> {/* Yeni ekranınız */}
+        <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerLabel: 'Profil' }} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
