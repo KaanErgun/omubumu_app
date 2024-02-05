@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { initDB } from './Database'; // Database fonksiyonlarını import et
 import LoginScreen from './LoginScreen'; // LoginScreen bileşenini import et
+import ProfileScreen from './ProfileScreen'; // Yeni eklediğiniz ekran
 
 function ChoiceScreen() {
   return (
@@ -61,6 +62,7 @@ const App = () => {
       <Drawer.Navigator initialRouteName="ChoiceScreen">
         <Drawer.Screen name="ChoiceScreen" component={ChoiceScreen} options={{ drawerLabel: 'Tercih Ekranı' }} />
         <Drawer.Screen name="Settings" component={SettingsScreen} options={{ drawerLabel: 'Ayarlar' }} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} options={{ drawerLabel: 'Profil' }} /> {/* Yeni ekranınız */}
       </Drawer.Navigator>
     </NavigationContainer>
   );
