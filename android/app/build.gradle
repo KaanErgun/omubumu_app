@@ -72,13 +72,13 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdk rootProject.ext.compileSdkVersion
+    compileSdk 33//rootProject.ext.compileSdkVersion
 
     namespace "com.omubumu_app"
     defaultConfig {
         applicationId "com.omubumu_app"
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion 21//rootProject.ext.minSdkVersion
+        targetSdkVersion 33//rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
